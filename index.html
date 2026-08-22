@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFix — Campus Issue Reporting Platform</title>
+  <meta name="description" content="Report campus facility issues, track resolutions, and vote on improvement projects. A transparent, multilingual platform for the entire campus community." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <!-- Leaflet for map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <!-- App scripts -->
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/router.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body class="dark-mode">
+
+  <!-- Toast container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Confirmation modal -->
+  <div id="confirm-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-icon" id="confirm-icon">⚠️</div>
+      <h3 id="confirm-title">Confirm Action</h3>
+      <p id="confirm-message">Are you sure?</p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="confirm-cancel">Cancel</button>
+        <button class="btn btn-danger" id="confirm-ok">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main app shell -->
+  <div id="app">
+
+    <!-- Navbar -->
+    <nav class="navbar" id="main-nav">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo" data-page="landing">
+          <span class="logo-icon">🏫</span>
+          <span class="logo-text">Campus<span class="logo-accent">Fix</span></span>
+        </a>
+        <div class="nav-links" id="nav-links">
+          <a href="#" class="nav-link" data-page="feed">Public Feed</a>
+          <a href="#" class="nav-link" data-page="budget">Budgeting</a>
+          <a href="#" class="nav-link nav-link-auth" data-page="auth" id="nav-auth-link">Sign In</a>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Switch to Light Mode">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+          <span class="theme-toggle-icon" id="theme-icon">☀️</span>
+        </button>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Page container — JS injects content here -->
+    <main id="page-root"></main>
+
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-drawer hidden" id="mobile-drawer">
+    <div class="mobile-nav-links" id="mobile-nav-links"></div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* =========================================================
+   CampusFix — Design Tokens
+   ========================================================= */
+
+:root {
+  /* --- Brand Colors (theme-independent) --- */
+  --color-primary:        hsl(245, 80%, 60%);
+  --color-primary-light:  hsl(245, 80%, 70%);
+  --color-primary-dark:   hsl(245, 80%, 48%);
+  --color-accent:         hsl(38, 95%, 58%);
+  --color-accent-light:   hsl(38, 95%, 70%);
+  --color-danger:         hsl(0, 80%, 60%);
+  --color-danger-light:   hsl(0, 80%, 70%);
+  --color-success:        hsl(142, 70%, 45%);
+  --color-success-light:  hsl(142, 70%, 60%);
+  --color-warning:        hsl(38, 95%, 58%);
+
+  /* --- Status Colors --- */
+  --status-reported:      hsl(210, 80%, 58%);
+  --status-acknowledged:  hsl(38, 95%, 58%);
+  --status-inprogress:    hsl(270, 70%, 62%);
+  --status-resolved:      hsl(142, 70%, 45%);
+  --status-closed:        hsl(220, 15%, 55%);
+
+  /* --- Category Colors --- */
+  --cat-electrical:  hsl(38, 95%, 58%);
+  --cat-plumbing:    hsl(200, 80%, 58%);
+  --cat-it:          hsl(245, 80%, 65%);
+  --cat-safety:      hsl(0, 80%, 60%);
+  --cat-cleanliness: hsl(142, 70%, 48%);
+  --cat-furniture:   hsl(30, 80%, 58%);
+  --cat-other:       hsl(220, 15%, 60%);
+
+  /* --- Surface (Dark Mode — default) --- */
+  --bg-base:     hsl(222, 25%, 8%);
+  --bg-surface:  hsl(222, 22%, 12%);
+  --bg-elevated: hsl(222, 20%, 17%);
+  --bg-card:     hsl(222, 20%, 14%);
+  --bg-glass:    hsla(222, 25%, 14%, 0.72);
+  --bg-hover:    hsl(222, 20%, 20%);
+  --bg-input:    hsl(222, 22%, 18%);
+  --bg-badge:    hsl(222, 20%, 22%);
+
+  /* --- Text --- */
+  --text-primary:   hsl(220, 20%, 95%);
+  --text-secondary: hsl(220, 15%, 65%);
+  --text-muted:     hsl(220, 12%, 45%);
+  --text-inverse:   hsl(222, 25%, 8%);
+
+  /* --- Borders --- */
+  --border-subtle: hsl(222, 20%, 22%);
+  --border-mid:    hsl(222, 20%, 28%);
+  --border-focus:  var(--color-primary);
+
+  /* --- Shadows --- */
+  --shadow-sm:   0 1px 3px hsla(222,40%,3%,.4);
+  --shadow-md:   0 4px 16px hsla(222,40%,3%,.5);
+  --shadow-lg:   0 12px 40px hsla(222,40%,3%,.6);
+  --shadow-glow: 0 0 24px hsla(245,80%,60%,.25);
+
+  /* --- Radii --- */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* --- Spacing --- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* --- Typography --- */
+  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', 'Inter', sans-serif;
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+
+  /* --- Transitions --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* --- Layout --- */
+  --nav-height:     64px;
+  --max-content:    1200px;
+  --sidebar-width:  260px;
+}
+
+/* ── Smooth theme transition on every element ─────────────── */
+*, *::before, *::after {
+  transition:
+    background-color 280ms ease,
+    border-color     280ms ease,
+    color            280ms ease,
+    box-shadow       280ms ease;
+}
+/* Exclude elements where instant transitions matter */
+.btn, a, [data-page], [data-action] {
+  transition:
+    background-color 150ms ease,
+    border-color     150ms ease,
+    color            150ms ease,
+    box-shadow       150ms ease,
+    transform        150ms ease,
+    opacity          150ms ease;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT MODE TOKEN OVERRIDES
+   Toggle: body.light-mode (set by JS, saved to localStorage)
+   ═══════════════════════════════════════════════════════════ */
+body.light-mode {
+  /* Surfaces */
+  --bg-base:     hsl(220, 22%, 97%);
+  --bg-surface:  hsl(220, 20%, 93%);
+  --bg-elevated: hsl(220, 18%, 89%);
+  --bg-card:     hsl(0, 0%, 100%);
+  --bg-glass:    hsla(0, 0%, 100%, 0.82);
+  --bg-hover:    hsl(220, 18%, 86%);
+  --bg-input:    hsl(220, 20%, 96%);
+  --bg-badge:    hsl(220, 18%, 88%);
+
+  /* Text */
+  --text-primary:   hsl(222, 28%, 10%);
+  --text-secondary: hsl(222, 20%, 35%);
+  --text-muted:     hsl(222, 15%, 52%);
+  --text-inverse:   hsl(220, 22%, 97%);
+
+  /* Borders */
+  --border-subtle: hsl(220, 18%, 86%);
+  --border-mid:    hsl(220, 16%, 75%);
+
+  /* Shadows — lighter key, soft diffusion on white backgrounds */
+  --shadow-sm:   0 1px 4px  hsla(222, 20%, 30%, .08);
+  --shadow-md:   0 4px 18px hsla(222, 20%, 30%, .12);
+  --shadow-lg:   0 12px 40px hsla(222, 20%, 30%, .16);
+  --shadow-glow: 0 0 24px   hsla(245, 80%, 60%, .18);
+
+  /* Status — slightly richer to pop on white */
+  --status-resolved: hsl(142, 65%, 36%);
+  --color-success:   hsl(142, 65%, 36%);
+}
